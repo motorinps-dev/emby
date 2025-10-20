@@ -476,8 +476,10 @@ def main():
     emby_api = EmbyAPI(emby_server_url, emby_api_key)
     
     if not emby_api.test_connection():
-        logger.error("❌ Не удалось подключиться к Emby серверу!")
-        return
+        logger.warning("⚠️ Не удалось подключиться к Emby серверу при запуске. Бот будет работать, но функции Emby недоступны.")
+        logger.warning("⚠️ Проверьте, что Emby сервер доступен из облака Replit, или используйте публичный URL.")
+    else:
+        logger.info("✅ Успешное подключение к Emby серверу!")
     
     if first_admin_id:
         try:
