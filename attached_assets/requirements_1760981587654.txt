@@ -1,4 +1,0 @@
-python-telegram-bot==22.5
-openpyxl==3.1.5
-requests==2.32.5
-apscheduler==3.11.0
